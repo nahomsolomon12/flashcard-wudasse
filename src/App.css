@@ -1,0 +1,15 @@
+* {
+    background-color: black;
+    background-image: url(./assets/mount-athos.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.5;
+ 
+}
+
+.front-card {
+
+    box-sizing: border-box;
+
+
+}
