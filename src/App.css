@@ -42,6 +42,10 @@ html {
     transform: rotateY(180deg);
 }
 
+label {
+    color: white;
+}
+
 .flashcard-front,
 .flashcard-back {
     position: absolute;
