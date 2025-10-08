@@ -1,10 +1,22 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+
 .background {
     background-color: black;
     background-image: url(./assets/mount-athos.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    
+    width: 100vw;
+    height: 100vh;
+}
 
+.header-title {
+    color: #fdfdfd;
+    text-align: center;
+    font-family: sans-serif;
 }
 
 .flashcard {
@@ -12,6 +24,9 @@
     height: 150px;
     perspective: 1000px;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .flashcard-inner {
