@@ -19,6 +19,32 @@ html {
     font-family: sans-serif;
 }
 
+h2 {
+    color: #fdfdfd;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+label {
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+input {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+
+}
+
 .flashcard {
     width: 250px;
     height: 150px;
@@ -42,9 +68,7 @@ html {
     transform: rotateY(180deg);
 }
 
-label {
-    color: white;
-}
+
 
 .flashcard-front,
 .flashcard-back {

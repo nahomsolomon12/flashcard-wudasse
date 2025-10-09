@@ -5,13 +5,20 @@ import Flashcard from './components/flashcard';
 function App() {
   // Array of flashcards
   const flashcards = [
-    { question: "What is React?", answer: "A JavaScript library for building UIs." },
-    { question: "Who created React?", answer: "Facebook (now Meta)." },
-    { question: "What is JSX?", answer: "A syntax extension for JavaScript." },
-    { question: "What is a component?", answer: "A reusable piece of UI." }
+    { question: "ውዳሴ ማርያም", answer: "Praise of Mary" },
+    { question: "አግዓዘ", answer: "He freed" },
+    { question: "ሠረቀ", answer: "He revealed" },
+    { question: "ላዕሌሃ", answer: "upon her" },
+    { question: "ዘሀሎ", answer: "He who was" },
+    { question: "ትትፌሣሕ", answer: "She rejoiced" },
+    { question: "ብርሃን", answer: "Light" },
+    { question: "መጻእከ", answer: "You came" },
+    { question: "አድኀንኮ", answer: "You saved" },
+    { question: "ረሰይካ", answer: "You made her" },
+    { question: "ባረክናከ", answer: "We blessed you" },
+    { question: "እንበለ", answer: "without" }
   ];
 
-  // Keep track of the Attempt of Definitions from User
 
 
 
@@ -47,6 +54,14 @@ function App() {
   // Keep track of current flashcard index
   const [currentIndex, setCurrentIndex] = useState(0);
 
+
+
+  const handleBefore = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex - 1 >= 0 ? prevIndex - 1 : flashcards.length - 1
+    );
+  };
+
   // Handler to move to next card
   const handleNext = () => {
     setCurrentIndex((prevIndex) =>
@@ -57,7 +72,8 @@ function App() {
   return (
     <>
       <div className='background'>
-        <h1 className='header-title'>All things React: Flashcard Set</h1>
+        <h1 className='header-title'>"Ge'ez" your way through: Flashcard Set</h1>
+        <h2>Number of Cards: {currentIndex + 1}/{flashcards.length}</h2>
         <div style={{ textAlign: 'center', marginTop: '50px' }}>
           <Flashcard
             question={flashcards[currentIndex].question}
@@ -73,17 +89,16 @@ function App() {
             onChange={handleChange} // Update state on every change
             placeholder="Type something here..."
           />
+          <br />
+          <button
+            onClick={handleBefore}>
+            Before
+          </button>
           <button
             onClick={handleNext}
-            style={{
-              marginTop: '20px',
-              padding: '10px 20px',
-              borderRadius: '8px',
-              cursor: 'pointer'
-            }}
-          >
-            Next Card
-          </button>
+          >Next</button>
+          <br />
+          <button>Shuffle</button>
         </div>
       </div>
     </>
