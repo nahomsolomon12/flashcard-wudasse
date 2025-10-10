@@ -5,12 +5,36 @@ html {
 }
 
 .background {
-    background-color: black;
+    background-color: rgba(0, 0, 0);
     background-image: url(./assets/mount-athos.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     width: 100vw;
     height: 100vh;
+
+
+    /* Center contents */
+    display: flex;
+    flex-direction: column;
+    /* keeps header on top if you have one */
+    align-items: center;
+    justify-content: center;
+
+}
+
+.background::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* black with 50% opacity */
+    z-index: 1;
+}
+
+/* Keep your content above the overlay */
+.background>* {
+    position: relative;
+    z-index: 2;
 }
 
 .header-title {
@@ -45,14 +69,16 @@ button {
 
 }
 
+
+
 .flashcard {
     width: 250px;
     height: 150px;
     perspective: 1000px;
     cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding-bottom: 20px;
+    padding-left: 20px;
+
 }
 
 .flashcard-inner {
@@ -62,6 +88,7 @@ button {
     text-align: center;
     transition: transform 0.6s;
     transform-style: preserve-3d;
+
 }
 
 .flashcard.flipped .flashcard-inner {
@@ -72,6 +99,7 @@ button {
 
 .flashcard-front,
 .flashcard-back {
+
     position: absolute;
     width: 100%;
     height: 100%;
